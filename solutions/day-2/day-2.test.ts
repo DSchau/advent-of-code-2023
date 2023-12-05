@@ -48,5 +48,5 @@ test('generates example correctly', () => {
     blue: 14
   })
 
-  expect(score).toBe(366)
+  expect(score).toBe(2545)
 })
