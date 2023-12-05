@@ -2,7 +2,7 @@ export const sample = `
 1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
-treb7uchet`
+treb7uchet`;
 
 export const part_one = `9cbncbxclbvkmfzdnldc
 jjn1drdffhs
@@ -1003,7 +1003,7 @@ grbhpnjrtvrbslnfgthree47vbpncxqfourfp
 lkrjlsz7mgv9525p1
 nineonebmfdxxfqvvkrblrd9
 5six6cvmqttbsxkzg
-42seven13four4`
+42seven13four4`;
 
 export const sample_two = `two1nine
 eightwothree
@@ -1011,7 +1011,7 @@ abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
-7pqrstsixteen`
+7pqrstsixteen`;
 
 export const input_two = `9cbncbxclbvkmfzdnldc
 jjn1drdffhs
@@ -2012,4 +2012,4 @@ grbhpnjrtvrbslnfgthree47vbpncxqfourfp
 lkrjlsz7mgv9525p1
 nineonebmfdxxfqvvkrblrd9
 5six6cvmqttbsxkzg
-42seven13four4`
+42seven13four4`;
