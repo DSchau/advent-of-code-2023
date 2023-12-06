@@ -57,3 +57,25 @@ export function possibleGameScore(game: Game[], gameRules: any): number {
   }
   return possible.reduce((count, id) => count + id, 0);
 }
+
+export function powerGameScore(game: Game[]): number {
+  let powers: number[] = []
+
+
+  for (let { moves } of game) {
+    let max = {
+      red: 0,
+      green: 0,
+      blue: 0
+    }
+    for (let { count, color } of moves.flat()) {
+      if (count > max[color]) {
+        max[color] = count
+      }
+    }
+
+    powers.push(max.red * max.green * max.blue)
+  }
+  return powers.reduce((total, current) => total + current, 0)
+}
+
