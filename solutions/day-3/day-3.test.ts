@@ -70,7 +70,7 @@ test("it produces sample sum from sample input", () => {
 });
 
 test("it produces correct input for part one", () => {
-  expect(getSum(part_one)).toEqual(527446);
+  expect(part1(part_one)).toEqual(527446);
 });
 
 test("it produces correct input for part two", () => {
