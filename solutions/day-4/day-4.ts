@@ -11,9 +11,9 @@ interface Game {
 
 export function getGame(input: string): Game[] {
   const rows = input.trim().split('\n')
-  
+
   return rows.map(row => {
-    const id: number = row.match(/Card\s(\d+)/)?.pop() as any
+    const id: number = row.match(/Card\s*(\d+)/)?.pop() as any
     
     let [winning, options] = row.replace(/Card[^:]+:/, '').trim().split('|').map(part => part.trim())
 
@@ -62,8 +62,11 @@ export function getScoreWithCards(input: string): number {
     })
 
   let clone = [...game]
-  let counter = 0
-  
+  let cards = game.reduce((merged: any, row: Game) => {
+    merged[row.id] = 1
+    return merged
+  }, {})
+
   while (clone.length > 0) {
     const card = clone.shift() as any
 
@@ -72,18 +75,15 @@ export function getScoreWithCards(input: string): number {
 
     const copies = game.slice(next, next + card.winning_numbers.length)
 
-    if (originalIndex === 0) {
-      console.log({
-        copies,
-        next,
-        card,
-      })
+    for (let i = 0; i < copies.length; i++) {
+      cards[copies[i].id] += 1
     }
-
-    counter += copies.length
 
     clone = clone.concat(copies)
   }
 
-  return counter
+  return Object.keys(cards)
+    .reduce((total: number, id: string) => {
+      return total + cards[id]
+    }, 0)
 }
